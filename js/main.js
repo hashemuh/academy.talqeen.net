@@ -85,4 +85,62 @@ document.addEventListener('DOMContentLoaded', function () {
       a.style.background = 'rgba(255,255,255,0.12)';
     }
   });
+
+  // --- FAQ accordion ---
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      
+      // Toggle current item
+      if (!isActive) {
+        faqItem.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // --- Share buttons ---
+  document.querySelectorAll('.share-btn').forEach(btn => {
+    const id = btn.id;
+    if (id && id.includes('-share')) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.title);
+        
+        let shareUrl = '';
+        switch(id) {
+          case 'x-share':
+            shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+            break;
+          case 'facebook-share':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            break;
+          case 'linkedin-share':
+            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+            break;
+          case 'whatsapp-share':
+            shareUrl = `https://wa.me/?text=${title}%20${url}`;
+            break;
+          case 'telegram-share':
+            shareUrl = `https://t.me/share/url?url=${url}&text=${title}`;
+            break;
+          case 'reddit-share':
+            shareUrl = `https://www.reddit.com/submit?url=${url}&title=${title}`;
+            break;
+        }
+        
+        if (shareUrl) {
+          window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+      });
+    }
+  });
 });

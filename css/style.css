@@ -1064,7 +1064,8 @@ h1, h2, h3, h4, h5 {
    =========================== */
 .site-footer {
   background: var(--teal-dark);
-  padding: 56px 0 24px;
+  padding: 64px 0 32px;
+  margin-top: 80px;
 }
 
 .footer-grid {
@@ -1074,7 +1075,7 @@ h1, h2, h3, h4, h5 {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 48px;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
 .footer-brand-text {
@@ -1089,15 +1090,17 @@ h1, h2, h3, h4, h5 {
   color: white;
   font-size: 14px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  letter-spacing: 0.3px;
 }
 
 .footer-col a {
   display: block;
   color: rgba(255,255,255,0.6);
   font-size: 14px;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   transition: color 0.18s;
+  line-height: 1.5;
 }
 
 .footer-col a:hover {
@@ -1107,13 +1110,13 @@ h1, h2, h3, h4, h5 {
 .footer-links-inline {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 20px 24px 0;
+  padding: 24px 24px 0;
   border-top: 1px solid rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 16px;
 }
 
 .footer-links-inline p {
@@ -1123,7 +1126,7 @@ h1, h2, h3, h4, h5 {
 
 .footer-links-inline .links {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .footer-links-inline a {
@@ -1197,7 +1200,7 @@ h1, h2, h3, h4, h5 {
 .article-layout {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 52px 24px 80px;
+  padding: 52px 24px 72px;
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: 52px;
@@ -1221,18 +1224,18 @@ h1, h2, h3, h4, h5 {
 .article-content h2 {
   font-size: 22px;
   color: var(--teal-dark);
-  margin: 36px 0 14px;
+  margin: 48px 0 16px;
   font-weight: 800;
 }
 
 .article-content h3 {
   font-size: 18px;
   color: var(--teal-dark);
-  margin: 28px 0 10px;
+  margin: 32px 0 12px;
 }
 
 .article-content p {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .article-content ul, .article-content ol {
@@ -1406,6 +1409,8 @@ h1, h2, h3, h4, h5 {
   .article-layout { grid-template-columns: 1fr; }
   .article-sidebar { position: static; }
   .testimonials-track .testimonial-card { min-width: calc(50% - 12px); }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .logo img { width: 150px; height: 150px; }
 }
 
 @media (max-width: 768px) {
@@ -1418,7 +1423,10 @@ h1, h2, h3, h4, h5 {
   .blog-grid { grid-template-columns: 1fr; }
   .blog-listing-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 360px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px; }
+  .site-footer { padding: 48px 0 24px; margin-top: 60px; }
+  .footer-links-inline { flex-direction: column; text-align: center; gap: 12px; padding: 20px 20px 0; }
+  .footer-links-inline .links { gap: 16px; }
   .alt-row { grid-template-columns: 1fr; }
   .alt-row:nth-child(even) { direction: ltr; }
   .alt-content { padding: 36px 28px; }
@@ -1426,7 +1434,24 @@ h1, h2, h3, h4, h5 {
   .steps-row { grid-template-columns: 1fr; }
   .testimonials-track .testimonial-card { min-width: 80%; }
   .trust-bar-inner { gap: 20px; }
-  .footer-links-inline { flex-direction: column; text-align: center; }
+  
+  /* Article bottom sections mobile */
+  .article-layout { padding: 40px 20px 60px; }
+  .logo { padding: 24px 0; margin: 32px 0; }
+  .logo img { width: 140px; height: 140px; }
+  .share-buttons { padding: 20px 0; margin: 24px 0; }
+  .share-btn { width: 38px; height: 38px; margin: 0 6px; font-size: 16px; }
+  .faq-container { margin: 32px 0; padding: 24px 0; }
+  .faq-container h2 { font-size: 22px; }
+  .faq-question { padding: 16px 18px; font-size: 15px; }
+  .faq-answer p { font-size: 14px; }
+  .article-cta { padding: 24px 20px; margin: 32px 0; }
+  .article-cta p { font-size: 16px; }
+  .journey-button { padding: 14px 20px; font-size: 16px; }
+  .see-all-courses { padding: 12px 20px; font-size: 15px; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+  .course-card { padding: 20px; }
+  .course-card h3 { font-size: 17px; }
 }
 
 @media (max-width: 480px) {
@@ -1435,6 +1460,24 @@ h1, h2, h3, h4, h5 {
   .hero-inner { padding: 40px 20px; }
   .hero-actions { flex-direction: column; }
   .btn-lg { width: 100%; }
+  
+  /* Article bottom sections small mobile */
+  .article-layout { padding: 32px 16px 48px; }
+  .logo { padding: 20px 0; margin: 24px 0; }
+  .logo img { width: 120px; height: 120px; }
+  .share-buttons { padding: 16px 0; margin: 20px 0; }
+  .share-btn { width: 36px; height: 36px; margin: 0 4px; font-size: 15px; }
+  .faq-container { margin: 24px 0; padding: 20px 0; }
+  .faq-container h2 { font-size: 20px; }
+  .faq-question { padding: 14px 16px; font-size: 14px; }
+  .faq-answer p { font-size: 13px; }
+  .article-cta { padding: 20px 16px; margin: 24px 0; }
+  .article-cta p { font-size: 15px; }
+  .journey-button { padding: 12px 18px; font-size: 15px; }
+  .see-all-courses { padding: 10px 18px; font-size: 14px; }
+  .benefit-item { padding: 16px; }
+  .course-card { padding: 16px; }
+  .course-card h3 { font-size: 16px; }
 }
 
 /* ===========================
@@ -1483,3 +1526,306 @@ details summary::before {
   margin-right: 10px;
 }
 details[open] summary::before { content: '−'; }
+
+/* ===========================
+   ARTICLE BOTTOM SECTIONS
+   =========================== */
+
+/* Logo/academy promotional section */
+.logo {
+  text-align: center;
+  padding: 32px 0;
+  margin: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo img {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 16px;
+  object-fit: contain;
+}
+
+.logo a {
+  display: inline-block;
+  transition: opacity 0.18s;
+}
+
+.logo a:hover {
+  opacity: 0.85;
+}
+
+/* Share buttons section */
+.share-buttons {
+  padding: 24px 0;
+  margin: 32px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.share-buttons p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin: 0 8px;
+  font-size: 18px;
+  transition: transform 0.18s, opacity 0.18s;
+  color: white;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.share-btn.x { background: #000; }
+.share-btn.facebook { background: #1877F2; }
+.share-btn.linkedin { background: #0A66C2; }
+.share-btn.whatsapp { background: #25D366; }
+.share-btn.telegram { background: #0088cc; }
+.share-btn.reddit { background: #FF4500; }
+
+/* FAQ container */
+.faq-container {
+  margin: 48px 0;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+}
+
+.faq-container h2 {
+  font-size: 26px;
+  color: var(--teal-dark);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
+  overflow: hidden;
+  transition: box-shadow 0.18s;
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 18px 20px;
+  background: white;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-body);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.18s;
+}
+
+.faq-question:hover {
+  background: var(--teal-light);
+}
+
+.faq-question::after {
+  content: '+';
+  color: var(--teal);
+  font-size: 24px;
+  font-weight: 800;
+  margin-left: 12px;
+}
+
+.faq-item.active .faq-question::after {
+  content: '−';
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 20px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 16px 20px 20px;
+}
+
+.faq-answer p {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Journey button */
+.journey-button {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  margin: 32px auto;
+  padding: 16px 24px;
+  background: var(--amber);
+  color: var(--teal-dark);
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: transform 0.18s, opacity 0.18s;
+}
+
+.journey-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* See all courses button */
+.see-all-courses {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 24px auto 0;
+  padding: 14px 24px;
+  background: var(--teal);
+  color: white;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.18s, opacity 0.18s;
+}
+
+.see-all-courses:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Article CTA section */
+.article-cta {
+  margin: 48px 0;
+  padding: 32px 28px;
+  background: var(--teal-light);
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--teal-mid);
+}
+
+.article-cta p {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-bottom: 16px;
+}
+
+.article-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Benefits grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 36px 0;
+}
+
+.benefit-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: box-shadow 0.18s;
+}
+
+.benefit-item:hover {
+  box-shadow: var(--shadow);
+}
+
+.benefit-item h3 {
+  font-size: 17px;
+  color: var(--teal-dark);
+  margin-bottom: 10px;
+}
+
+.benefit-item p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Course cards in articles */
+.course-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  transition: box-shadow 0.18s;
+}
+
+.course-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.course-card h3 {
+  font-size: 18px;
+  color: var(--teal-dark);
+  margin-bottom: 12px;
+}
+
+.course-card p {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.course-details {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.course-details h3 {
+  font-size: 15px;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+}
+
+.course-details ul {
+  margin: 8px 0 16px 20px;
+  list-style: disc;
+}
+
+.course-details li {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
