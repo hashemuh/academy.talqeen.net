@@ -115,6 +115,14 @@ h1, h2, h3, h4, h5 {
   font-size: 18px;
   color: white;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.nav-brand .brand-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
 }
 
 .nav-brand .brand-sub {
