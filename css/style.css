@@ -1172,7 +1172,6 @@ h1, h2, h3, h4, h5 {
 .promo-center {
   position: relative;
   z-index: 3;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1186,16 +1185,13 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   color: white;
-
   line-height: 0.9;
 }
 
 .promo-up-to {
   align-self: flex-start;
   margin-top: 7px;
-
   color: var(--teal-mid);
   font-size: 13px;
   font-weight: 800;
@@ -1256,9 +1252,7 @@ h1, h2, h3, h4, h5 {
   padding: 16px 20px;
 }
 
-
 /* Discount circle */
-
 .promo-seal {
   width: 118px;
   height: 118px;
