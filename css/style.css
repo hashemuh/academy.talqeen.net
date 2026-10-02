@@ -196,7 +196,7 @@ h1, h2, h3, h4, h5 {
 .hero-bg-letters span {
   position: absolute;
   font-family: 'Amiri', serif;
-  color: rgba(29,158,117,0.12);
+  color: rgba(34, 191, 141, 0.12);
   user-select: none;
   animation: floatLetter linear infinite;
 }
