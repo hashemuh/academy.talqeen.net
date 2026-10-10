@@ -60,16 +60,39 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.slider-next')?.addEventListener('click', () => goTo(current + 1));
   }
 
-  // --- Blog search ---
+  // --- Article search and category filtering ---
   const searchInput = document.getElementById('blogSearch');
   if (searchInput) {
-    searchInput.addEventListener('input', function () {
-      const q = this.value.toLowerCase();
-      document.querySelectorAll('.blog-card').forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(q) ? '' : 'none';
+    const cards = Array.from(document.querySelectorAll('.blog-card'));
+    const filters = Array.from(document.querySelectorAll('[data-blog-category]'));
+    let activeCategory = 'all';
+    const applyFilters = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const categories = (card.dataset.categories || '').split(' ');
+        const matches = (!query || card.textContent.toLowerCase().includes(query)) && (activeCategory === 'all' || categories.includes(activeCategory));
+        card.hidden = !matches;
+        card.style.display = matches ? '' : 'none';
+        if (matches) visible++;
       });
-    });
+      const count = document.getElementById('blogResultCount');
+      const empty = document.getElementById('blogNoResults');
+      if (count) count.textContent = visible + (visible === 1 ? ' article' : ' articles');
+      if (empty) empty.hidden = visible > 0;
+    };
+    searchInput.addEventListener('input', applyFilters);
+    filters.forEach(button => button.addEventListener('click', () => {
+      activeCategory = button.dataset.blogCategory;
+      filters.forEach(item => {
+        const selected = item === button;
+        item.setAttribute('aria-pressed', String(selected));
+        item.classList.toggle('btn-amber', selected);
+        item.classList.toggle('btn-primary', !selected);
+      });
+      applyFilters();
+    }));
+    applyFilters();
   }
 
   // --- Update copyright year ---
